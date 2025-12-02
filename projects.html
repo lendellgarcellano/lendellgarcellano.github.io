@@ -9,12 +9,14 @@
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div id="menu"></div>
+        <script>
+          fetch("menu.html")
+          .then(response => response.text())
+          .then(data => {
+          document.getElementById("menu").innerHTML = data;
+          });
+        </script>
     </nav>
   </header>
 
