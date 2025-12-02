@@ -93,4 +93,20 @@ footer {
   margin-bottom: 10px;
 }
 
+.project-card .btn-secondary {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #3B82F6;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-card .btn-secondary:hover {
+  background: #2563EB;
+}
+
+
 
