@@ -8,7 +8,7 @@ function addTask() {
   const li = document.createElement("li");
   li.innerHTML = `
     <span onclick="toggleComplete(this)">${text}</span>
-    <button onclick="deleteTask(this)">X</button>
+    <button onclick="deleteTask(this)">Delete</button>
   `;
 
   taskList.appendChild(li);
@@ -22,3 +22,4 @@ function toggleComplete(el) {
 function deleteTask(btn) {
   btn.parentElement.remove();
 }
+
