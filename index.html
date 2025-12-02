@@ -5,19 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <script src="js/menu.js"></script>
 </head>
 <body>
   <header>
-    <nav>
-      <div id="menu"></div>
-        <script>
-          fetch("menu.html")
-          .then(response => response.text())
-          .then(data => {
-          document.getElementById("menu").innerHTML = data;
-          });
-        </script>
-    </nav>
+    <nav class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="index.html">MyPortfolio</a>
+    </div>
+
+    <div class="menu-icon" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
   </header>
 
   <section class="hero">
