@@ -73,8 +73,8 @@
     .badge{padding:8px 12px; border-radius:999px; background:var(--glass); color:var(--muted); font-weight:600; transition:transform .2s var(--ease)}
     .badge:hover{transform:translateY(-6px); box-shadow:0 10px 30px rgba(2,6,23,0.45)}
 
-    /* Projects */
-    .projects-list{display:grid; gap:12px}
+    /* Sample Projects */
+    .Sample Projects-list{display:grid; gap:12px}
     .project{padding:16px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02)); display:flex; justify-content:space-between; align-items:center}
     .project .meta{display:flex; flex-direction:column}
     .project .meta p{margin:2px 0}
@@ -132,7 +132,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#Sample Projects">Sample Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -233,9 +233,9 @@
       </div>
     </section>
 
-   <section id="projects" class="card" style="margin-top:18px">
-      <h2>Projects</h2>
-      <div class="projects-list">
+   <section id="Sample Projects" class="card" style="margin-top:18px">
+      <h2>Sample Projects</h2>
+      <div class="Sample Projects-list">
         <div class="project" tabindex="0">
           <div class="meta">
             <strong>Simple Calculator</strong>
@@ -351,7 +351,7 @@
       menuBtn.setAttribute('aria-expanded', String(!open));
       mobileMenu.style.display = open ? 'none' : 'block';
       if(!open){
-        mobileMenu.innerHTML = `<nav><ul style='list-style:none;padding:12px;margin:0;display:flex;flex-direction:column;gap:8px'><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li></ul></nav>`
+        mobileMenu.innerHTML = `<nav><ul style='list-style:none;padding:12px;margin:0;display:flex;flex-direction:column;gap:8px'><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#Sample Projects">Sample Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li></ul></nav>`
       } else mobileMenu.innerHTML = '';
     });
 
