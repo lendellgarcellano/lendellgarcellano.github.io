@@ -1,50 +1,452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <script src="js/menu.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jose Lendell Nico O. Garcellano — Fullstack Developer</title>
+  <meta name="description" content="Resourceful IT professional with hands-on experience in software development, QA, and technical support. Skilled in solving complex problems, building efficient solutions, and learning new technologies quickly. Known for reliability, adaptability, and delivering results with minimal supervision." />
+  <link rel="canonical" href="https://your-github-username.github.io/your-repo-name/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Jose Lendell Nico O. Garcellano — Senior Programmer" />
+  <meta property="og:description" content="Resourceful IT professional with hands-on experience in software development, QA, and technical support." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/" />
+  <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nODAwJyBoZWlnaHQ9JzQ1MCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWxsPSIjMjM0NTY3Ii8+PHRleHQgeD0nNTAlJyB5PSc1MCUnIGR5PScuM2VtJyBmb250LXNpemU9JzMwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmaWxsPSd3aGl0ZSc+Sm9zZSBMbmVkZWxsPC90ZXh0Pjwvc3ZnPg==" />
+
+  <!-- Favicon (simple data URI) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23234567'/%3E%3Ctext x='50' y='57' font-size='36' text-anchor='middle' fill='white' font-family='Arial'%3EJG%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured Data: JSON-LD Person (uses exact provided content) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jose Lendell Nico O. Garcellano",
+    "jobTitle": "Senior Programmer",
+    "affiliation": "None",
+    "description": "Resourceful IT professional with hands-on experience in software development, QA, and technical support. Skilled in solving complex problems, building efficient solutions, and learning new technologies quickly. Known for reliability, adaptability, and delivering results with minimal supervision.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Perpetual Help System DALTA",
+      "degree": "Bachelor of Science in Information Technology"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#3b82f6; --glass: rgba(255,255,255,0.06);
+      --radius:14px; --maxw:1100px; --ease:cubic-bezier(.2,.9,.2,1);
+    }
+    [data-theme='light']{ --bg:#f7f9fc; --card:#ffffff; --muted:#556069; --accent:#2563eb; --glass: rgba(0,0,0,0.04); color:#0b1724 }
+    *{box-sizing:border-box}
+    html,body{height:100%; font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,var(--bg), #08101a); color: #e6eef8; margin:0; -webkit-font-smoothing:antialiased}
+
+    /* Layout */
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px}
+    header{position:sticky; top:12px; z-index:999; backdrop-filter: blur(8px);}
+    .navwrap{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:48px; height:48px; border-radius:10px; display:grid; place-items:center; font-weight:700; color:white; background:linear-gradient(135deg,var(--accent), #7c3aed); box-shadow:0 6px 20px rgba(59,130,246,0.15)}
+    nav ul{display:flex; gap:12px; list-style:none; margin:0; padding:0}
+    nav a{color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-size:15px}
+    nav a:hover, nav a:focus{color:var(--card); background:var(--accent); color:white; transform:translateY(-2px)}
+    .cta{display:flex; gap:8px; align-items:center}
+    .btn{background:var(--accent); color:white; padding:10px 14px; border-radius:12px; border:0; cursor:pointer; box-shadow:0 8px 24px rgba(37,99,235,0.14); transition:transform .25s var(--ease)}
+    .btn:hover{transform:translateY(-3px)}
+
+    /* Hero */
+    .hero{display:grid; gap:20px; grid-template-columns:1fr; align-items:center; padding:48px 12px; margin-top:12px}
+    .hero-card{padding:28px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow:0 10px 50px rgba(2,6,23,0.6); display:flex; gap:20px; align-items:center}
+    .intro h1{font-size:28px; margin:0 0 6px 0}
+    .intro p{margin:0; color:var(--muted)}
+    .hero-actions{display:flex; gap:12px; margin-top:12px}
+
+    /* Grid sections */
+    .two-col{display:grid; grid-template-columns:1fr; gap:18px}
+    section.card{padding:22px; border-radius:16px; background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02)); box-shadow: 0 6px 30px rgba(2,6,23,0.5)}
+    h2{margin:0 0 12px 0}
+
+    /* Skills badges */
+    .badges{display:flex; flex-wrap:wrap; gap:10px}
+    .badge{padding:8px 12px; border-radius:999px; background:var(--glass); color:var(--muted); font-weight:600; transition:transform .2s var(--ease)}
+    .badge:hover{transform:translateY(-6px); box-shadow:0 10px 30px rgba(2,6,23,0.45)}
+
+    /* Projects */
+    .projects-list{display:grid; gap:12px}
+    .project{padding:16px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02)); display:flex; justify-content:space-between; align-items:center}
+    .project .meta{display:flex; flex-direction:column}
+    .project .meta p{margin:2px 0}
+    .project .actions{display:flex; gap:8px}
+    .link-btn{padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; cursor:pointer}
+
+    /* Contact form */
+    form{display:grid; gap:10px}
+    input, textarea{padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit}
+    input:focus, textarea:focus{outline:2px solid rgba(59,130,246,0.22)}
+
+    footer{padding:20px 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media(min-width:720px){
+      .hero{grid-template-columns:1fr 420px}
+      .two-col{grid-template-columns:1fr 380px}
+      nav ul{gap:18px}
+    }
+    @media(min-width:1000px){
+      .container{padding:36px}
+      .intro h1{font-size:34px}
+    }
+
+    /* Animations */
+    .fade-in{opacity:0; transform:translateY(10px); transition:opacity .6s var(--ease), transform .6s var(--ease)}
+    .in-view{opacity:1; transform:none}
+
+    /* Hamburger */
+    .hamburger{display:inline-grid; width:44px; height:44px; place-items:center; border-radius:10px; cursor:pointer}
+    .mobile-nav{display:none}
+    @media(max-width:719px){
+      nav ul{display:none}
+      .mobile-nav{display:block}
+    }
+
+    /* Decorative animated background */
+    .hero-bg{position:absolute; inset:0; z-index:-1; opacity:.18; pointer-events:none}
+    .wave{width:1200px; height:480px; filter:blur(28px); transform:translateX(-12%)}
+
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-  <div class="nav-container">
-    <div class="brand">
-      <a href="index.html">MyPortfolio</a>
+  <header class="container">
+    <div class="navwrap" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">JG</div>
+        <div>
+          <div style="font-weight:700">Jose Lendell Nico O. Garcellano</div>
+          <div style="font-size:12px; color:var(--muted)">Senior Programmer — None</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Toggle dark and light mode">Toggle Theme</button>
+        <div class="mobile-nav">
+          <button class="hamburger" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
+      </div>
     </div>
 
-    <div class="menu-icon" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+    <div id="mobileMenu" style="display:none; margin-top:8px"></div>
   </header>
 
-  <section class="hero">
-    <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img">
-    <h1>Hello, I'm Jose Lendell Nico O. Garcellano</h1>
-    <p>Full Stack Developer | Web Enthusiast | Tech Virtual Assistant</p>
-    <p>A passionate full-stack developer focused on building clean, functional, and user-friendly web applications. I enjoy turning ideas into interactive digital experiences and continuously learning new technologies to solve real-world problems.</p>
-  <a href="#contact" class="btn-primary">Hire Me</a>
-  </section>
+  <main class="container" id="top">
+    <!-- Animated hero background -->
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1200 480" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#2563eb" />
+            <stop offset="100%" stop-color="#7c3aed" />
+          </linearGradient>
+        </defs>
+        <path d="M0,160 C150,280 350,0 600,100 C850,200 1050,60 1200,140 L1200,480 L0,480 Z" fill="url(#g1)" opacity="0.6"/>
+      </svg>
+    </div>
 
-  <footer id="contact">
-    <p>Connect with me:</p>
-    <a href="https://github.com/username">GitHub</a> |
-    <a href="https://linkedin.com/in/username">LinkedIn</a>
-  </footer>
+    <section class="hero">
+      <div class="hero-card fade-in" tabindex="0">
+        <div>
+          <div class="intro">
+            <h1>Jose Lendell Nico O. Garcellano</h1>
+            <p><strong>Current Role:</strong> Senior Programmer<br>
+            <strong>Current Company:</strong> None</p>
+            <p style="margin-top:10px">Resourceful IT professional with hands-on experience in software development, QA, and technical support. Skilled in solving complex problems, building efficient solutions, and learning new technologies quickly. Known for reliability, adaptability, and delivering results with minimal supervision.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Contact</a>
+              <button class="btn" id="downloadResume" onclick="alert('Resume download placeholder — add your PDF to the repo and link it.');">Download Resume</button>
+            </div>
+          </div>
+        </div>
+
+        <aside style="width:260px">
+          <div class="card" style="padding:16px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));">
+            <h3 style="margin:0 0 8px 0">Contact</h3>
+            <p style="margin:0; color:var(--muted)">Use the contact form below to send a message (client-side validation only).</p>
+            <div style="margin-top:12px; display:flex; gap:8px;">
+              <a class="link-btn" href="#" onclick="event.preventDefault(); alert('LinkedIn placeholder — add your profile link to footer.');">LinkedIn</a>
+              <a class="link-btn" href="#contact">Contact Form</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="card fade-in" style="min-height:220px">
+        <h2 style="margin-top:0">Professional Summary</h2>
+        <p>Resourceful IT professional with hands-on experience in software development, QA, and technical support. Skilled in solving complex problems, building efficient solutions, and learning new technologies quickly. Known for reliability, adaptability, and delivering results with minimal supervision.</p>
+
+        <hr style="opacity:.06; margin:14px 0">
+        <div style="display:flex; gap:8px; align-items:center; justify-content:space-between">
+          <div>
+            <strong>Education</strong>
+            <div>Bachelor of Science in Information Technology<br>University of Perpetual Help System DALTA</div>
+          </div>
+          <div style="text-align:right">
+            <small style="color:var(--muted)">Based on provided profile</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="two-col" style="margin-top:18px; gap:18px">
+      <article class="card fade-in" tabindex="0">
+        <h2>About Me</h2>
+        <p>Resourceful IT professional with hands-on experience in software development, QA, and technical support. Skilled in solving complex problems, building efficient solutions, and learning new technologies quickly. Known for reliability, adaptability, and delivering results with minimal supervision.</p>
+        <p><strong>Current Role:</strong> Senior Programmer</p>
+        <p><strong>Current Company:</strong> None</p>
+      </article>
+
+      <aside class="card fade-in" tabindex="0">
+        <h2>Quick Facts</h2>
+        <ul>
+          <li>Location: Philippines (local timezone)</li>
+          <li>Availability: Full-time (seeking opportunities)</li>
+          <li>Languages: English</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="skills" class="card" style="margin-top:18px">
+      <h2>Skills</h2>
+      <h3>Technical Skills</h3>
+      <div class="badges" role="list">
+        <div class="badge" role="listitem" tabindex="0">Building and customizing web pages</div>
+        <div class="badge" role="listitem" tabindex="0">Responsive UI development</div>
+        <div class="badge" role="listitem" tabindex="0">Troubleshooting Windows systems and basic network issues</div>
+        <div class="badge" role="listitem" tabindex="0">Software setup, configuration, and maintenance</div>
+        <div class="badge" role="listitem" tabindex="0">Manual testing for web applications and features</div>
+      </div>
+
+      <h3 style="margin-top:14px">Soft Skills</h3>
+      <div class="badges">
+        <div class="badge" tabindex="0">Problem-Solving &amp; Critical Thinking</div>
+        <div class="badge" tabindex="0">Adaptability &amp; Fast Learning</div>
+        <div class="badge" tabindex="0">Time Management &amp; Independence</div>
+        <div class="badge" tabindex="0">Customer/Client Support Mindset</div>
+        <div class="badge" tabindex="0">Attention to Detail</div>
+      </div>
+
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer">Design Tokens (3 preset color palettes & recommended typography)</summary>
+        <div style="padding:12px">
+          <strong>Color Palettes</strong>
+          <ol>
+            <li>Oceanic: #0f1724 (bg), #2563eb (accent), #7c3aed (accent2)</li>
+            <li>Emerald: #052e0b (bg), #059669 (accent), #10b981 (accent2)</li>
+            <li>Shoal: #0b1220 (bg), #ff7a59 (accent), #ffd166 (accent2)</li>
+          </ol>
+          <strong>Typography Pairs</strong>
+          <ol>
+            <li>Inter (UI) + Merriweather (Headlines)</li>
+            <li>Inter (UI) + Poppins (Headlines)</li>
+            <li>Roboto (UI) + Playfair Display (Headlines)</li>
+          </ol>
+        </div>
+      </details>
+    </section>
+
+    <section id="projects" class="card" style="margin-top:18px">
+      <h2>Projects</h2>
+      <div class="projects-list">
+        <div class="project" tabindex="0">
+          <div class="meta">
+            <strong>Sample 1</strong>
+            <p>Sample Description</p>
+            <small><strong>Tech:</strong> Tech used</small>
+            <small><strong>Project Link:</strong> no url</small>
+          </div>
+          <div class="actions">
+            <button class="link-btn" onclick="alert('Project link placeholder: no url');">View</button>
+            <button class="link-btn" onclick="document.getElementById('projModal').style.display='block'">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal / Expandable project detail (static) -->
+      <div id="projModal" aria-hidden="true" style="display:none; position:fixed; inset:0; background:rgba(2,6,23,0.6); align-items:center; justify-content:center; padding:20px">
+        <div style="background:var(--card); padding:18px; border-radius:12px; max-width:720px; width:100%">
+          <h3>Sample 1 — Sample Description</h3>
+          <p>This is the expanded project view. Tech: Tech used. Project Link: no url</p>
+          <div style="display:flex; gap:8px; justify-content:flex-end">
+            <button class="btn" onclick="document.getElementById('projModal').style.display='none'">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="card" style="margin-top:18px">
+      <h2>Work Experience</h2>
+      <div>
+        <pre style="white-space:pre-wrap; font-family:inherit; background:transparent; border:0; padding:0">- **[JOB TITLE] — [COMPANY NAME]**
+  - [RESPONSIBILITY / ACHIEVEMENT 1]
+  - [RESPONSIBILITY / ACHIEVEMENT 2]
+  - [RESPONSIBILITY / ACHIEVEMENT 3]
+  - [RESPONSIBILITY / ACHIEVEMENT 4]</pre>
+      </div>
+    </section>
+
+    <section id="education" class="card" style="margin-top:18px">
+      <h2>Education</h2>
+      <div>
+        <p>- Bachelor of Science in Information Technology<br>
+        University of Perpetual Help System DALTA</p>
+      </div>
+    </section>
+
+    <section id="certifications" class="card" style="margin-top:18px">
+      <h2>Certifications</h2>
+      <div>
+        <p>- [CERTIFICATION NAME 1]<br>  - <strong>Certificate Link:</strong> [USER WILL PROVIDE URL]</p>
+        <p>- [CERTIFICATION NAME 2]<br>  - <strong>Certificate Link:</strong> [USER WILL PROVIDE URL]</p>
+        <p>- [CERTIFICATION NAME 3]<br>  - <strong>Certificate Link:</strong> [USER WILL PROVIDE URL]</p>
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px">
+      <h2>Contact</h2>
+      <form id="contactForm" onsubmit="return handleContact(event)" aria-label="Contact form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required aria-required="true" placeholder="Your name" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Write a brief message"></textarea>
+
+        <div style="display:flex; gap:8px; align-items:center">
+          <button class="btn" type="submit">Send Message</button>
+          <div id="formNote" style="color:var(--muted); font-size:13px">Client-side validation only — no backend configured.</div>
+        </div>
+      </form>
+    </section>
+
+    <footer style="margin-top:18px" class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+        <div>
+          <strong>Jose Lendell Nico O. Garcellano</strong><br>
+          <small style="color:var(--muted)">Senior Programmer — None</small>
+        </div>
+        <div style="text-align:right">
+          <div style="margin-bottom:6px"><a href="#" onclick="event.preventDefault(); alert('LinkedIn placeholder — add your profile link.');">LinkedIn</a></div>
+          <div style="font-size:13px; color:var(--muted)">© <span id="year"></span> Jose Lendell Nico O. Garcellano. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <section class="card" style="margin-top:18px">
+      <h3>TODO (link placeholders)</h3>
+      <ul>
+        <li>Add resume PDF and update the <code>downloadResume</code> button URL.</li>
+        <li>Update project "Project Link: no url" with an actual URL.</li>
+        <li>Replace <code>[USER WILL PROVIDE URL]</code> placeholders for certificates.</li>
+        <li>Add LinkedIn profile link in footer and header.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script>
+    // Basic DOM helpers
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => document.querySelectorAll(s);
+
+    // Theme toggle with localStorage
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeToggle.textContent = currentTheme === 'light' ? 'Light Mode' : 'Dark Mode';
+
+    themeToggle.addEventListener('click', ()=>{
+      const t = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      themeToggle.setAttribute('aria-pressed', t === 'dark');
+      themeToggle.textContent = t === 'light' ? 'Light Mode' : 'Dark Mode';
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      mobileMenu.style.display = open ? 'none' : 'block';
+      if(!open){
+        mobileMenu.innerHTML = `<nav><ul style='list-style:none;padding:12px;margin:0;display:flex;flex-direction:column;gap:8px'><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li></ul></nav>`
+      } else mobileMenu.innerHTML = '';
+    });
+
+    // Scroll reveal
+    const els = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('in-view');
+      })
+    }, {threshold:0.12});
+    els.forEach(el=>io.observe(el));
+
+    // Navbar shrink on scroll
+    let lastScroll=0; window.addEventListener('scroll', ()=>{
+      const header = document.querySelector('header');
+      const y = window.scrollY;
+      if(y>60) header.style.transform='translateY(-6px) scale(.995)'; else header.style.transform='none';
+      lastScroll=y;
+    });
+
+    // Contact form (client-side validation only)
+    function handleContact(e){
+      e.preventDefault();
+      const name = $('#name').value.trim();
+      const email = $('#email').value.trim();
+      const message = $('#message').value.trim();
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!name){ alert('Please enter your name'); return false }
+      if(!emailReg.test(email)){ alert('Please enter a valid email address'); return false }
+      if(message.length < 6){ alert('Message must be at least 6 characters'); return false }
+      alert('Thank you! Your message has been received (client-side only).');
+      e.target.reset();
+      return false;
+    }
+
+    // Modal close on outside click
+    document.getElementById('projModal').addEventListener('click', (ev)=>{
+      if(ev.target.id === 'projModal') ev.target.style.display='none';
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accessibility: focus outlines visible on keyboard nav
+    document.body.addEventListener('keydown', (e)=>{
+      if(e.key === 'Tab') document.documentElement.classList.add('show-focus');
+    });
+
+    // Small micro-interaction: project view animation
+    $$('.project .link-btn').forEach(b=>b.addEventListener('mouseover', ()=>b.style.transform='translateY(-3px)'));
+
+  </script>
+
 </body>
 </html>
-
